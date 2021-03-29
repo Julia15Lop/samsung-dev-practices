@@ -1,0 +1,390 @@
+{
+  "supermercados": [
+    {
+      "supermercado1": {
+        "nombre": "Carrefour S.L",
+        "dirección": "Av de la Gran Vía de Hortaleza",
+        "población": "Madrid",
+        "cp": "28043",
+        "geolocalización": {
+          "latitud": "3 33 39",
+          "longitud": "3 33 39"
+        },
+        "secciones": [
+          {
+            "nombre": "fruteria",
+            "costePersonal": 24000,
+            "productos": [
+              {
+                "nombre": "tomate rama",
+                "descripcion": "tomate rama huerta Murcia",
+                "origen": "España",
+                "perecedero": true,
+                "unidadMedida": "kg",
+
+                "precioVta": 3.27,
+                "precioOferta": 3.00,
+                "oferta": true,
+
+                "fechaEntrada": "17/4/2021 4:00 a.m.",
+                "fechaOfertaIni": "20/04/2021",
+                "fechaOfertaFin": "24/04/2021",
+                "stock": 53,
+
+                "adquirido": false                
+              },
+              {
+                "nombre": "Manzana Golden",
+                "descripcion": "Manzana golden de huerta de Almería",
+                "origen": "España",
+                "perecedero": true,
+                "unidadMedida": "kg",
+          
+                "precioVta": 2.67,
+                "precioOferta": 2.30,
+                "oferta": false,
+
+                "fechaEntrada": "19/4/2021 5:00 a.m.",
+                "fechaOfertaIni": null,
+                "fechaOfertaFin": null,
+                "stock": 60,
+
+                "adquirido": false
+              },
+              {
+                "nombre": "Pepino",
+                "descripcion": "Pepino Marruecos",
+                "origen": "Marruecos",
+                "perecedero": true,
+                "unidadMedida": "kg",
+
+                "precioVta": 1.27,
+                "precioOferta": 1.00,
+                "oferta": false,
+
+                "fechaEntrada": "29/4/2021 7:00 a.m.",
+                "fechaOfertaIni": null,
+                "fechaOfertaFin": null,
+                "stock": 60,
+
+                "adquirido": true
+              }
+            ]
+          },
+          {
+            "nombre": "pescadería",
+            "costePersonal": 30000,
+            "productos": [
+              {
+                "nombre": "Lubina",
+                "descripcion": "Lubina del cantabrico",
+                "origen": "España",
+                "perecedero": true,
+                "unidadMedida": "kg",
+
+                "precioVta": 6.50,
+                "precioOferta": 6.10,
+                "oferta": true,
+
+                "fechaEntrada": "29/4/2021 4:00 a.m.",
+                "fechaOfertaIni": "30/04/2021",
+                "fechaOfertaFin": "03/04/2021",
+                "stock": 30,
+                
+                "adquirido": true
+              },
+              {
+                "nombre": "Dorada",
+                "descripcion": "Dorada del cantanbrico",
+                "origen": "España",
+                "perecedero": true,
+                "unidadMedida": "kg",
+
+                "precioVta": 6.50,
+                "precioOferta": 6.15,
+                "oferta": false,
+
+                "fechaEntrada": "29/4/2021 4:00 a.m.",
+                "fechaOfertaIni": null,
+                "fechaOfertaFin": null,
+                "stock": 40,
+
+                "adquirido": false
+              },
+              {
+                "nombre": "Bacaladilla",
+                "descripcion": "Bacaladilla del sur",
+                "origen": "España",
+                "perecedero": true,
+                "unidadMedida": "kg",
+
+                "precioVta": 2.27,
+                "precioOferta": 2.00,
+                "oferta": false,
+
+                "fechaEntrada": "29/4/2021 4:00 a.m.",
+                "fechaOfertaIni": null,
+                "fechaOfertaFin": null,
+                "stock": 50,
+
+                "adquirido": false
+              }
+            ]
+          },
+          {
+            "nombre": "pastas y arroces",
+            "costePersonal": 24000,
+            "productos": [
+              {
+                "nombre": "Arroz",
+                "descripcion": "Arroz blanco fino",
+                "origen": "España",
+                "perecedero": false,
+                "unidadMedida": "kg",
+
+                "precioVta": 1.27,
+                "precioOferta": 1.00,
+                "oferta": true,
+
+                "fechaEntrada": "17/4/2021 4:00 a.m.",
+                "fechaOfertaIni": "19/04/2021",
+                "fechaOfertaFin": "25/04/2021",
+                "stock": 60,
+
+                "adquirido": true
+              },
+              {
+                "nombre": "Macarrones lazo",
+                "descripcion": "Macarrones lazo marca Gallo",
+                "origen": "España",
+                "perecedero": false,
+                "unidadMedida": "kg",
+
+                "precioVta": 2.27,
+                "precioOferta": 2.00,
+                "oferta": false,
+
+                "fechaEntrada": "17/4/2021 4:00 a.m.",
+                "fechaOfertaIni": null,
+                "fechaOfertaFin": null,
+                "stock": 70,
+
+                "adquirido": false
+              },
+              {
+                "nombre": "Espaguetti",
+                "descripcion": "Espaguetti del número 1",
+                "origen": "España",
+                "perecedero": true,
+                "unidadMedida": "kg",
+
+                "precioVta": 2.27,
+                "precioOferta": null,
+                "oferta": false,
+
+                "fechaEntrada": "17/4/2021 4:00 a.m.",
+                "fechaOfertaIni": null,
+                "fechaOfertaFin": null,
+                "stock": 100,
+
+                "adquirido": false
+              }
+            ]
+          }
+        ]
+      },
+      "supermercado2": {
+        "nombre": "Mercadona S.A",
+        "dirección": "Calle Valencia,5",
+        "población": "Tavernes Blanques,Valencia",
+        "cp": "46016",
+        "geolocalización": {
+          "latitud": " 39.507",
+          "longitud": "-0.365591"
+        },
+        "secciones": [
+          {
+            "nombre": "fruteria",
+            "costePersonal": 24000,
+            "productos": [
+              {
+                "nombre": "tomate rama",
+                "descripcion": "tomate rama huerta Murcia",
+                "origen": "España",
+                "perecedero": true,
+                "unidadMedida": "kg",
+
+                "precioVta": 3.27,
+                "precioOferta": 3.00,
+                "oferta": true,
+
+                "fechaEntrada": "17/4/2021 4:00 a.m.",
+                "fechaOfertaIni": "20/04/2021",
+                "fechaOfertaFin": "24/04/2021",
+                "stock": 53,
+
+                "adquirido": false                
+              },
+              {
+                "nombre": "Manzana Golden",
+                "descripcion": "Manzana golden de huerta de Almería",
+                "origen": "España",
+                "perecedero": true,
+                "unidadMedida": "kg",
+
+                "precioVta": 2.67,
+                "precioOferta": 2.30,
+                "oferta": false,
+
+                "fechaEntrada": "19/4/2021 5:00 a.m.",
+                "fechaOfertaIni": null,
+                "fechaOfertaFin": null,
+                "stock": 60,
+
+                "adquirido": false
+              },
+              {
+                "nombre": "Pepino",
+                "descripcion": "Pepino Marruecos",
+                "origen": "Marruecos",
+                "perecedero": true,
+                "unidadMedida": "kg",
+
+                "precioVta": 1.27,
+                "precioOferta": 1.00,
+                "oferta": false,
+
+                "fechaEntrada": "29/4/2021 7:00 a.m.",
+                "fechaOfertaIni": null,
+                "fechaOfertaFin": null,
+                "stock": 60,
+
+                "adquirido": true
+              }
+            ]
+          },
+          {
+            "nombre": "pescadería",
+            "costePersonal": 30000,
+            "productos": [
+              {
+                "nombre": "Lubina",
+                "descripcion": "Lubina del cantabrico",
+                "origen": "España",
+                "perecedero": true,
+                "unidadMedida": "kg",
+
+                "precioVta": 6.50,
+                "precioOferta": 6.10,
+                "oferta": true,
+
+                "fechaEntrada": "29/4/2021 4:00 a.m.",
+                "fechaOfertaIni": "30/04/2021",
+                "fechaOfertaFin": "03/04/2021",
+                "stock": 30,
+                
+                "adquirido": true
+              },
+              {
+                "nombre": "Dorada",
+                "descripcion": "Dorada del cantanbrico",
+                "origen": "España",
+                "perecedero": true,
+                "unidadMedida": "kg",
+
+                "precioVta": 6.50,
+                "precioOferta": 6.15,
+                "oferta": false,
+
+                "fechaEntrada": "29/4/2021 4:00 a.m.",
+                "fechaOfertaIni": null,
+                "fechaOfertaFin": null,
+                "stock": 40,
+
+                "adquirido": false
+              },
+              {
+                "nombre": "Bacaladilla",
+                "descripcion": "Bacaladilla del sur",
+                "origen": "España",
+                "perecedero": true,
+                "unidadMedida": "kg",
+
+                "precioVta": 2.27,
+                "precioOferta": 2.00,
+                "oferta": false,
+
+                "fechaEntrada": "29/4/2021 4:00 a.m.",
+                "fechaOfertaIni": null,
+                "fechaOfertaFin": null,
+                "stock": 50,
+
+                "adquirido": false
+              }
+            ]
+          },
+          {
+            "nombre": "pastas y arroces",
+            "costePersonal": 24000,
+            "productos": [
+              {
+                "nombre": "Arroz",
+                "descripcion": "Arroz blanco fino",
+                "origen": "España",
+                "perecedero": false,
+                "unidadMedida": "kg",
+
+                "precioVta": 1.27,
+                "precioOferta": 1.00,
+                "oferta": true,
+
+                "fechaEntrada": "17/4/2021 4:00 a.m.",
+                "fechaOfertaIni": "19/04/2021",
+                "fechaOfertaFin": "25/04/2021",
+                "stock": 60,
+
+                "adquirido": true
+              },
+              {
+                "nombre": "Macarrones lazo",
+                "descripcion": "Macarrones lazo marca Gallo",
+                "origen": "España",
+                "perecedero": false,
+                "unidadMedida": "kg",
+
+                "precioVta": 2.27,
+                "precioOferta": 2.00,
+                "oferta": false,
+
+                "fechaEntrada": "17/4/2021 4:00 a.m.",
+                "fechaOfertaIni": null,
+                "fechaOfertaFin": null,
+                "stock": 70,
+
+                "adquirido": false
+              },
+              {
+                "nombre": "Espaguetti",
+                "descripcion": "Espaguetti del número 1",
+                "origen": "España",
+                "perecedero": true,
+                "unidadMedida": "kg",
+                
+                "precioVta": 2.27,
+                "precioOferta": null,
+                "oferta": false,
+
+                "fechaEntrada": "17/4/2021 4:00 a.m.",
+                "fechaOfertaIni": null,
+                "fechaOfertaFin": null,
+                "stock": 100,
+
+                "adquirido": false
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ] 
+}

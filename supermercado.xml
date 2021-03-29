@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+   <supermercados>
+      <element>
+         <supermercado1>
+            <cp>28043</cp>
+            <dirección>Av de la Gran Vía de Hortaleza</dirección>
+            <geolocalización>
+               <latitud>3 33 39</latitud>
+               <longitud>3 33 39</longitud>
+            </geolocalización>
+            <nombre>Carrefour S.L</nombre>
+            <población>Madrid</población>
+            <secciones>
+               <element>
+                  <costePersonal>24000</costePersonal>
+                  <nombre>fruteria</nombre>
+                  <productos>
+                     <element>
+                        <adquirido>false</adquirido>
+                        <descripcion>tomate rama huerta Murcia</descripcion>
+                        <fechaEntrada>17/4/2021 4:00 a.m.</fechaEntrada>
+                        <fechaOfertaFin>24/04/2021</fechaOfertaFin>
+                        <fechaOfertaIni>20/04/2021</fechaOfertaIni>
+                        <nombre>tomate rama</nombre>
+                        <oferta>true</oferta>
+                        <origen>España</origen>
+                        <perecedero>true</perecedero>
+                        <precioOferta>3.0</precioOferta>
+                        <precioVta>3.27</precioVta>
+                        <stock>53</stock>
+                        <unidadMedida>kg</unidadMedida>
+                     </element>
+                     <element>
+                        <adquirido>false</adquirido>
+                        <descripcion>Manzana golden de huerta de Almería</descripcion>
+                        <fechaEntrada>19/4/2021 5:00 a.m.</fechaEntrada>
+                        <fechaOfertaFin null="true" />
+                        <fechaOfertaIni null="true" />
+                        <nombre>Manzana Golden</nombre>
+                        <oferta>false</oferta>
+                        <origen>España</origen>
+                        <perecedero>true</perecedero>
+                        <precioOferta>2.3</precioOferta>
+                        <precioVta>2.67</precioVta>
+                        <stock>60</stock>
+                        <unidadMedida>kg</unidadMedida>
+                     </element>
+                     <element>
+                        <adquirido>true</adquirido>
+                        <descripcion>Pepino Marruecos</descripcion>
+                        <fechaEntrada>29/4/2021 7:00 a.m.</fechaEntrada>
+                        <fechaOfertaFin null="true" />
+                        <fechaOfertaIni null="true" />
+                        <nombre>Pepino</nombre>
+                        <oferta>false</oferta>
+                        <origen>Marruecos</origen>
+                        <perecedero>true</perecedero>
+                        <precioOferta>1.0</precioOferta>
+                        <precioVta>1.27</precioVta>
+                        <stock>60</stock>
+                        <unidadMedida>kg</unidadMedida>
+                     </element>
+                  </productos>
+               </element>
+               <element>
+                  <costePersonal>30000</costePersonal>
+                  <nombre>pescadería</nombre>
+                  <productos>
+                     <element>
+                        <adquirido>true</adquirido>
+                        <descripcion>Lubina del cantabrico</descripcion>
+                        <fechaEntrada>29/4/2021 4:00 a.m.</fechaEntrada>
+                        <fechaOfertaFin>03/04/2021</fechaOfertaFin>
+                        <fechaOfertaIni>30/04/2021</fechaOfertaIni>
+                        <nombre>Lubina</nombre>
+                        <oferta>true</oferta>
+                        <origen>España</origen>
+                        <perecedero>true</perecedero>
+                        <precioOferta>6.1</precioOferta>
+                        <precioVta>6.5</precioVta>
+                        <stock>30</stock>
+                        <unidadMedida>kg</unidadMedida>
+                     </element>
+                     <element>
+                        <adquirido>false</adquirido>
+                        <descripcion>Dorada del cantanbrico</descripcion>
+                        <fechaEntrada>29/4/2021 4:00 a.m.</fechaEntrada>
+                        <fechaOfertaFin null="true" />
+                        <fechaOfertaIni null="true" />
+                        <nombre>Dorada</nombre>
+                        <oferta>false</oferta>
+                        <origen>España</origen>
+                        <perecedero>true</perecedero>
+                        <precioOferta>6.15</precioOferta>
+                        <precioVta>6.5</precioVta>
+                        <stock>40</stock>
+                        <unidadMedida>kg</unidadMedida>
+                     </element>
+                     <element>
+                        <adquirido>false</adquirido>
+                        <descripcion>Bacaladilla del sur</descripcion>
+                        <fechaEntrada>29/4/2021 4:00 a.m.</fechaEntrada>
+                        <fechaOfertaFin null="true" />
+                        <fechaOfertaIni null="true" />
+                        <nombre>Bacaladilla</nombre>
+                        <oferta>false</oferta>
+                        <origen>España</origen>
+                        <perecedero>true</perecedero>
+                        <precioOferta>2.0</precioOferta>
+                        <precioVta>2.27</precioVta>
+                        <stock>50</stock>
+                        <unidadMedida>kg</unidadMedida>
+                     </element>
+                  </productos>
+               </element>
+               <element>
+                  <costePersonal>24000</costePersonal>
+                  <nombre>pastas y arroces</nombre>
+                  <productos>
+                     <element>
+                        <adquirido>true</adquirido>
+                        <descripcion>Arroz blanco fino</descripcion>
+                        <fechaEntrada>17/4/2021 4:00 a.m.</fechaEntrada>
+                        <fechaOfertaFin>25/04/2021</fechaOfertaFin>
+                        <fechaOfertaIni>19/04/2021</fechaOfertaIni>
+                        <nombre>Arroz</nombre>
+                        <oferta>true</oferta>
+                        <origen>España</origen>
+                        <perecedero>false</perecedero>
+                        <precioOferta>1.0</precioOferta>
+                        <precioVta>1.27</precioVta>
+                        <stock>60</stock>
+                        <unidadMedida>kg</unidadMedida>
+                     </element>
+                     <element>
+                        <adquirido>false</adquirido>
+                        <descripcion>Macarrones lazo marca Gallo</descripcion>
+                        <fechaEntrada>17/4/2021 4:00 a.m.</fechaEntrada>
+                        <fechaOfertaFin null="true" />
+                        <fechaOfertaIni null="true" />
+                        <nombre>Macarrones lazo</nombre>
+                        <oferta>false</oferta>
+                        <origen>España</origen>
+                        <perecedero>false</perecedero>
+                        <precioOferta>2.0</precioOferta>
+                        <precioVta>2.27</precioVta>
+                        <stock>70</stock>
+                        <unidadMedida>kg</unidadMedida>
+                     </element>
+                     <element>
+                        <adquirido>false</adquirido>
+                        <descripcion>Espaguetti del número 1</descripcion>
+                        <fechaEntrada>17/4/2021 4:00 a.m.</fechaEntrada>
+                        <fechaOfertaFin null="true" />
+                        <fechaOfertaIni null="true" />
+                        <nombre>Espaguetti</nombre>
+                        <oferta>false</oferta>
+                        <origen>España</origen>
+                        <perecedero>true</perecedero>
+                        <precioOferta null="true" />
+                        <precioVta>2.27</precioVta>
+                        <stock>100</stock>
+                        <unidadMedida>kg</unidadMedida>
+                     </element>
+                  </productos>
+               </element>
+            </secciones>
+         </supermercado1>
+         <supermercado2>
+            <cp>46016</cp>
+            <dirección>Calle Valencia,5</dirección>
+            <geolocalización>
+               <latitud> 39.507</latitud>
+               <longitud>-0.365591</longitud>
+            </geolocalización>
+            <nombre>Mercadona S.A</nombre>
+            <población>Tavernes Blanques,Valencia</población>
+            <secciones>
+               <element>
+                  <costePersonal>24000</costePersonal>
+                  <nombre>fruteria</nombre>
+                  <productos>
+                     <element>
+                        <adquirido>false</adquirido>
+                        <descripcion>tomate rama huerta Murcia</descripcion>
+                        <fechaEntrada>17/4/2021 4:00 a.m.</fechaEntrada>
+                        <fechaOfertaFin>24/04/2021</fechaOfertaFin>
+                        <fechaOfertaIni>20/04/2021</fechaOfertaIni>
+                        <nombre>tomate rama</nombre>
+                        <oferta>true</oferta>
+                        <origen>España</origen>
+                        <perecedero>true</perecedero>
+                        <precioOferta>3.0</precioOferta>
+                        <precioVta>3.27</precioVta>
+                        <stock>53</stock>
+                        <unidadMedida>kg</unidadMedida>
+                     </element>
+                     <element>
+                        <adquirido>false</adquirido>
+                        <descripcion>Manzana golden de huerta de Almería</descripcion>
+                        <fechaEntrada>19/4/2021 5:00 a.m.</fechaEntrada>
+                        <fechaOfertaFin null="true" />
+                        <fechaOfertaIni null="true" />
+                        <nombre>Manzana Golden</nombre>
+                        <oferta>false</oferta>
+                        <origen>España</origen>
+                        <perecedero>true</perecedero>
+                        <precioOferta>2.3</precioOferta>
+                        <precioVta>2.67</precioVta>
+                        <stock>60</stock>
+                        <unidadMedida>kg</unidadMedida>
+                     </element>
+                     <element>
+                        <adquirido>true</adquirido>
+                        <descripcion>Pepino Marruecos</descripcion>
+                        <fechaEntrada>29/4/2021 7:00 a.m.</fechaEntrada>
+                        <fechaOfertaFin null="true" />
+                        <fechaOfertaIni null="true" />
+                        <nombre>Pepino</nombre>
+                        <oferta>false</oferta>
+                        <origen>Marruecos</origen>
+                        <perecedero>true</perecedero>
+                        <precioOferta>1.0</precioOferta>
+                        <precioVta>1.27</precioVta>
+                        <stock>60</stock>
+                        <unidadMedida>kg</unidadMedida>
+                     </element>
+                  </productos>
+               </element>
+               <element>
+                  <costePersonal>30000</costePersonal>
+                  <nombre>pescadería</nombre>
+                  <productos>
+                     <element>
+                        <adquirido>true</adquirido>
+                        <descripcion>Lubina del cantabrico</descripcion>
+                        <fechaEntrada>29/4/2021 4:00 a.m.</fechaEntrada>
+                        <fechaOfertaFin>03/04/2021</fechaOfertaFin>
+                        <fechaOfertaIni>30/04/2021</fechaOfertaIni>
+                        <nombre>Lubina</nombre>
+                        <oferta>true</oferta>
+                        <origen>España</origen>
+                        <perecedero>true</perecedero>
+                        <precioOferta>6.1</precioOferta>
+                        <precioVta>6.5</precioVta>
+                        <stock>30</stock>
+                        <unidadMedida>kg</unidadMedida>
+                     </element>
+                     <element>
+                        <adquirido>false</adquirido>
+                        <descripcion>Dorada del cantanbrico</descripcion>
+                        <fechaEntrada>29/4/2021 4:00 a.m.</fechaEntrada>
+                        <fechaOfertaFin null="true" />
+                        <fechaOfertaIni null="true" />
+                        <nombre>Dorada</nombre>
+                        <oferta>false</oferta>
+                        <origen>España</origen>
+                        <perecedero>true</perecedero>
+                        <precioOferta>6.15</precioOferta>
+                        <precioVta>6.5</precioVta>
+                        <stock>40</stock>
+                        <unidadMedida>kg</unidadMedida>
+                     </element>
+                     <element>
+                        <adquirido>false</adquirido>
+                        <descripcion>Bacaladilla del sur</descripcion>
+                        <fechaEntrada>29/4/2021 4:00 a.m.</fechaEntrada>
+                        <fechaOfertaFin null="true" />
+                        <fechaOfertaIni null="true" />
+                        <nombre>Bacaladilla</nombre>
+                        <oferta>false</oferta>
+                        <origen>España</origen>
+                        <perecedero>true</perecedero>
+                        <precioOferta>2.0</precioOferta>
+                        <precioVta>2.27</precioVta>
+                        <stock>50</stock>
+                        <unidadMedida>kg</unidadMedida>
+                     </element>
+                  </productos>
+               </element>
+               <element>
+                  <costePersonal>24000</costePersonal>
+                  <nombre>pastas y arroces</nombre>
+                  <productos>
+                     <element>
+                        <adquirido>true</adquirido>
+                        <descripcion>Arroz blanco fino</descripcion>
+                        <fechaEntrada>17/4/2021 4:00 a.m.</fechaEntrada>
+                        <fechaOfertaFin>25/04/2021</fechaOfertaFin>
+                        <fechaOfertaIni>19/04/2021</fechaOfertaIni>
+                        <nombre>Arroz</nombre>
+                        <oferta>true</oferta>
+                        <origen>España</origen>
+                        <perecedero>false</perecedero>
+                        <precioOferta>1.0</precioOferta>
+                        <precioVta>1.27</precioVta>
+                        <stock>60</stock>
+                        <unidadMedida>kg</unidadMedida>
+                     </element>
+                     <element>
+                        <adquirido>false</adquirido>
+                        <descripcion>Macarrones lazo marca Gallo</descripcion>
+                        <fechaEntrada>17/4/2021 4:00 a.m.</fechaEntrada>
+                        <fechaOfertaFin null="true" />
+                        <fechaOfertaIni null="true" />
+                        <nombre>Macarrones lazo</nombre>
+                        <oferta>false</oferta>
+                        <origen>España</origen>
+                        <perecedero>false</perecedero>
+                        <precioOferta>2.0</precioOferta>
+                        <precioVta>2.27</precioVta>
+                        <stock>70</stock>
+                        <unidadMedida>kg</unidadMedida>
+                     </element>
+                     <element>
+                        <adquirido>false</adquirido>
+                        <descripcion>Espaguetti del número 1</descripcion>
+                        <fechaEntrada>17/4/2021 4:00 a.m.</fechaEntrada>
+                        <fechaOfertaFin null="true" />
+                        <fechaOfertaIni null="true" />
+                        <nombre>Espaguetti</nombre>
+                        <oferta>false</oferta>
+                        <origen>España</origen>
+                        <perecedero>true</perecedero>
+                        <precioOferta null="true" />
+                        <precioVta>2.27</precioVta>
+                        <stock>100</stock>
+                        <unidadMedida>kg</unidadMedida>
+                     </element>
+                  </productos>
+               </element>
+            </secciones>
+         </supermercado2>
+      </element>
+   </supermercados>
+</root>
