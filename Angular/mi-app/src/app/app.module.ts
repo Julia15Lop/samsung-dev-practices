@@ -4,10 +4,17 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { ListUsersComponent } from './components/list-users/list-users.component';
+import { PersonaService } from './services/persona.service';
+import { PagenotfoundComponent } from './components/pagenotfound/pagenotfound.component';
+import { SigninComponent } from './components/signin/signin.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ListUsersComponent,
+    PagenotfoundComponent,
+    SigninComponent
   ],
   imports: [
     BrowserModule,
@@ -15,7 +22,7 @@ import { AppComponent } from './app.component';
     ReactiveFormsModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [PersonaService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
