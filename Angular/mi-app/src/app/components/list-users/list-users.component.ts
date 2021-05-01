@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PersonaService } from 'src/app/services/persona.service';
 import { Person } from 'src/app/classes/person';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-list-users',
@@ -9,7 +10,7 @@ import { Person } from 'src/app/classes/person';
 })
 export class ListUsersComponent implements OnInit {
 
-  constructor(private personaService: PersonaService) { }
+  constructor(private personaService: PersonaService, private route: ActivatedRoute) { }
   
   getUsers(): Person[] {
     return this.personaService.getUserList();
