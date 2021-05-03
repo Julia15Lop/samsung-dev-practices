@@ -1,13 +1,27 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ListUsersComponent } from './components/list-users/list-users.component';
-import { PagenotfoundComponent } from './components/pagenotfound/pagenotfound.component';
-import { SigninComponent } from './components/signin/signin.component';
+
+import { ErrorPageComponent } from './error-page/error-page.component'
 
 const routes: Routes = [
-  { path: 'signin', component: SigninComponent},
-  { path: 'users', component: ListUsersComponent },
-  { path: '**', component: PagenotfoundComponent}
+  {
+    path: '',
+    children: [
+      {
+        path: 'form',
+        loadChildren: () => import('./signin/signin.module').then( m => m.SigninModule )
+      },
+      {
+        path: '404',
+        component: ErrorPageComponent
+      },
+      {
+        path: '**',
+        redirectTo: 'form'
+      }
+    ]
+  }
+  
 ];
 
 @NgModule({
