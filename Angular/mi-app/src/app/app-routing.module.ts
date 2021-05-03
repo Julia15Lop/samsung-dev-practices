@@ -8,6 +8,10 @@ const routes: Routes = [
     path: '',
     children: [
       {
+        path: 'home',
+        loadChildren: () => import('./home/home.module').then( m => m.HomeModule )
+      },
+      {
         path: 'form',
         loadChildren: () => import('./signin/signin.module').then( m => m.SigninModule )
       },
@@ -17,7 +21,7 @@ const routes: Routes = [
       },
       {
         path: '**',
-        redirectTo: 'form'
+        redirectTo: 'home'
       }
     ]
   }
