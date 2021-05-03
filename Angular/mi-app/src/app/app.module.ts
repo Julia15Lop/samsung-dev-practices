@@ -15,10 +15,8 @@ import { ListUsersComponent } from './components/list-users/list-users.component
 import { PersonaService } from './services/persona.service';
 import { PagenotfoundComponent } from './components/pagenotfound/pagenotfound.component';
 import { SigninComponent } from './components/signin/signin.component';
-import { FormComponent } from './components/form/form.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { MaterialModule } from './material/material.module'
 import { HttpClientModule } from '@angular/common/http';
 
 import { ErrorPageComponent } from './error-page/error-page.component';
@@ -29,8 +27,7 @@ import { ErrorPageComponent } from './error-page/error-page.component';
     ErrorPageComponent,
     ListUsersComponent,
     PagenotfoundComponent,
-    SigninComponent,
-    FormComponent
+    SigninComponent
   ],
   imports: [
     BrowserModule,
@@ -39,8 +36,7 @@ import { ErrorPageComponent } from './error-page/error-page.component';
 
     FormsModule,
     ReactiveFormsModule,
-    BrowserAnimationsModule,
-    MaterialModule
+    BrowserAnimationsModule
   ],
   providers: [PersonaService],
   bootstrap: [AppComponent]
