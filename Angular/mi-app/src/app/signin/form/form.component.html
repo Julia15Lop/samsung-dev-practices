@@ -12,36 +12,76 @@
       </g>
     </svg>
 
-    <span>App Gestión Usuarios</span>
+    <span>Formulario Registro</span>
 
 </div>
 
 <!-- Form -->
 <div class="person-form">
-    <form class="register-form">
-        <mat-form-field class="register-full-width">
-          <mat-label>Name</mat-label>
-          <input matInput placeholder="Ex. Pizza" value="Sushi">
+    <form class="register-form" [formGroup]="signinForm" (ngSubmit)="onSubmit()" #PersonForm="ngForm">
+        <table class="register-full-width" cellspacing="0"><tr>
+          <!-- Name -->
+          <td><mat-form-field class="register-full-width">
+            <mat-label>Nombre</mat-label>
+            <input matInput formControlName="name" minlength="3" placeholder="Nombre" required>
+          </mat-form-field></td>
           
-        </mat-form-field>
+          <!-- Surname -->
+          <td><mat-form-field class="register-full-width">
+            <mat-label>Apellidos</mat-label>
+            <input matInput formControlName="surname" required minlength="3">
+          </mat-form-field></td>
 
-        <mat-form-field class="register-full-width">
-            <mat-label>Surname</mat-label>
-            <input matInput placeholder="Ex. Pizza" value="Sushi">
+        </tr></table>
+
+        <table class="register-full-width" cellspacing="0"><tr>
+          <!-- Age -->
+          <td><mat-form-field class="register-full-width">
+            <mat-label>Edad</mat-label>
+            <input matInput formControlName="age" required min="0" max="125">
+          </mat-form-field></td>
+
+          <!-- DNI -->
+          <td><mat-form-field class="register-full-width">
+            <mat-label>DNI</mat-label>
+            <input matInput #dni formControlName="dni" required maxlength="9" placeholder="Ex. 03978393C">
+            <mat-hint align="end">{{dni.value.length}} / 9</mat-hint>
+          </mat-form-field></td>
+
+          <!-- Color -->
+          <td><mat-form-field class="register-full-width">
+            <mat-label>Color Favorito</mat-label>
+            <input matInput formControlName="color" required minlength="3" placeholder="color">
+          </mat-form-field></td>
+        </tr></table>
+        
+        <br>
+        
+        <table class="register-full-width" cellspacing="0"><tr>
+          <!-- Birthday -->
+          <td><mat-form-field appearance="fill">
+            <mat-label>Cumpleaños</mat-label>
             
-          </mat-form-field>
-      
-        <mat-form-field class="register-full-width">
-          <mat-label>Leave a comment</mat-label>
-          <textarea matInput placeholder="Ex. It makes me feel..."></textarea>
-        </mat-form-field>
-    </form>
-      
-    <mat-form-field appearance="fill">
-        <mat-label>Choose a date</mat-label>
-        <input matInput [matDatepicker]="picker">
-        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-        <mat-datepicker #picker></mat-datepicker>
-    </mat-form-field>
-      
+            <input matInput formControlName="birth" required [matDatepicker]="picker" placeholder="Cumpleaños">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field></td>
+          
+           <!-- Sexx -->
+           <td><mat-form-field appearance="fill">
+            <mat-label>Sexo</mat-label>
+            <select matNativeControl formControlName="sex" required>
+              <option value="man">Hombre</option>
+              <option value="woman">Mujer</option>
+              <option value="another">Otro</option>
+              <option value="not">No Especificado</option>
+            </select>
+          </mat-form-field></td>
+
+        </tr></table>
+
+        <div class="button-row">
+          <button mat-raised-button>Basic</button>
+        </div>
+    </form>      
 </div>

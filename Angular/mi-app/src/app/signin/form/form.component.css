@@ -80,6 +80,7 @@
 /* Form class */
 .person-form {
     margin-top: 100px;
+
 }
 
 .register-form {
@@ -87,8 +88,16 @@
     max-width: 500px;
     width: 100%;
 }
-  
-.register-full-width {
-    width: 100%;
+
+td {
+  padding-right: 8px;
 }
 
+.button-row {
+  display: table-cell;
+  width: 490px;
+}
+
+.button-row .mat-button-base {
+  margin: 8px 8px 8px 0;
+}
