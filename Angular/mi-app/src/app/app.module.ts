@@ -14,7 +14,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 
 import { ErrorPageComponent } from './error-page/error-page.component';
-import { AddComponent } from './person/pages/add/add.component';
+import { AddComponent } from './users/pages/add/add.component';
 
 @NgModule({
   declarations: [

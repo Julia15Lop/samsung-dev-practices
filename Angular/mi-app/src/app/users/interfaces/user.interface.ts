@@ -1,5 +1,6 @@
 export interface User {
   /* Attributes */
+  _id?: string;
   _name: string;
   _surname: string;
   _age: number;
