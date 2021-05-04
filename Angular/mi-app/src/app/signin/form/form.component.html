@@ -24,6 +24,7 @@
           <td><mat-form-field class="register-full-width">
             <mat-label>Nombre</mat-label>
             <input matInput formControlName="name" minlength="3" placeholder="Nombre" required>
+            <mat-error *ngIf="signinForm.invalid">{{getErrorNameMsg()}}</mat-error>
           </mat-form-field></td>
           
           <!-- Surname -->
@@ -81,7 +82,7 @@
         </tr></table>
 
         <div class="button-row">
-          <button mat-raised-button>Basic</button>
+          <button mat-raised-button [disabled]="signinForm.invalid" >Registrar</button>
         </div>
     </form>      
 </div>
