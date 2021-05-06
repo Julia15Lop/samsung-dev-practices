@@ -1,22 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ErrorPageComponent } from '../error-page/error-page.component';
 
 import { FormComponent } from './form/form.component';
 
 const routes: Routes = [
   {
     path: '',
-    children: [
-      {
-        path: 'form',
-        component: FormComponent
-      },
-      {
-        path: '**',
-        redirectTo: 'form'
-      }
-    ]
+    component: FormComponent
   }
 ];
 

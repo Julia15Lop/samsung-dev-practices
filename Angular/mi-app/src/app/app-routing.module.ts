@@ -16,6 +16,10 @@ const routes: Routes = [
         loadChildren: () => import('./signin/signin.module').then( m => m.SigninModule )
       },
       {
+        path: 'users',
+        loadChildren: () => import('./users/users.module').then( m => m.UsersModule )
+      },
+      {
         path: '404',
         component: ErrorPageComponent
       },
