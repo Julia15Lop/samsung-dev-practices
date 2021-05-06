@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { User } from '../interfaces/users'
+import { UsersService } from '../services/users.service';
 
 @Component({
   selector: 'app-list',
@@ -11,15 +12,16 @@ export class ListComponent implements OnInit {
   date = new Date();
 
   users: User[] = [
-    { _id: 1, _name: "Julia", _surname: "Lopez", _age: 23, _color: "red", _sex: "woman", _dni: "030042034C", _birth: this.date },
-    { _id: 2, _name: "Natalia", _surname: "Lopez Sánchez", _age: 23, _color: "red", _sex: "woman", _dni: "030042034C", _birth: this.date}
+    /*{ _id: 1, _name: "Julia", _surname: "Lopez", _age: 23, _color: "red", _sex: "woman", _dni: "030042034C", _birth: this.date },
+    { _id: 2, _name: "Natalia", _surname: "Lopez Sánchez", _age: 23, _color: "red", _sex: "woman", _dni: "030042034C", _birth: this.date}*/
   ]
 
   displayedColumns: string[] = ['_id', '_name', '_surname', 'actions']
-  constructor() { }
+  
+  constructor(private usersService: UsersService) { }
 
   ngOnInit(): void {
-    
+    this.usersService.getUsers().subscribe( users => this.users = users);
   }
 
 }

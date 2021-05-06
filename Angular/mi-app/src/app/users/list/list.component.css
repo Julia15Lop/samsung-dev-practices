@@ -88,7 +88,11 @@
 .mat-sort-header-container {
     display:flex;
     justify-content:center;
-  }
+}
+
+button {
+    margin-right: 10px;
+}
 table {
     width: 100%;
 }
