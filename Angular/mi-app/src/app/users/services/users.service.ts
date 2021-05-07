@@ -12,22 +12,37 @@ import { User } from '../interfaces/users'
 })
 export class UsersService {
   
-  private baseUrl: string = environment.baseUrl;
+  private baseUrl: string;
+  private id: number;
 
-  constructor( private http: HttpClient ) { }
+  constructor(private http: HttpClient) {
+    this.baseUrl = environment.baseUrl;
+    this.id = 1;
+  }
   
   /* Get Users method */
-  getUsers(): Observable<User[]> {
+  public getUsers(): Observable<User[]> {
     return this.http.get<User[]>(`${this.baseUrl}/users`);
   }
 
   /* GET User by Id */
-  getUserById(id: string): Observable<User> {
+  public getUserById(id: number): Observable<User> {
     return this.http.get<User>(`${this.baseUrl}/users/${id}`);
   }
 
+  /* POST User */
+  public addUser(postUserData: Object): Observable<User> {
+    this.id = this.id + 1;
+    return this.http.post<User>(`${this.baseUrl}/users`, postUserData);
+  }
+
+  /* PUT User data */
+  public putUser(updateUserData: Object, id: number): Observable<User> {
+    return this.http.put<User>(`${this.baseUrl}/users/${id}`, updateUserData);
+  }
+  
   /* DELETE User by ID */
-  deleteUser(id: number): Observable<{}> {
+  public  deleteUser(id: number): Observable<{}> {
     return this.http.delete(`${this.baseUrl}/users/${id}`);
   }
 
