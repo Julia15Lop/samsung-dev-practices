@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 
-import { User } from '../interfaces/users'
+import { User} from '../interfaces/users'
 import { UsersService } from '../services/users.service';
+import { USERS } from 'src/app/helpers/mock-users';
 
 @Component({
   selector: 'app-list',
@@ -9,19 +11,33 @@ import { UsersService } from '../services/users.service';
   styleUrls: ['./list.component.css']
 })
 export class ListComponent implements OnInit {
-  date = new Date();
 
-  users: User[] = [
-    { _id: 1, _name: "Julia", _surname: "Lopez", _age: 23, _color: "red", _sex: "woman", _dni: "030042034C", _birth: this.date },
-    /*{ _id: 2, _name: "Natalia", _surname: "Lopez Sánchez", _age: 23, _color: "red", _sex: "woman", _dni: "030042034C", _birth: this.date}*/
-  ]
+  users: User[] = USERS;
 
-  displayedColumns: string[] = ['_id', '_name', '_surname', 'actions']
+
+  displayedColumns: string[] = ['id', 'name', 'surname', 'actions']
   
-  constructor(private usersService: UsersService) { }
+  constructor(private usersService: UsersService, private activatedRoute: ActivatedRoute,
+              private router: Router) { }
 
-  ngOnInit(): void {
-    this.usersService.getUsers().subscribe( users => this.users = users);
+  ngOnInit() {
+    this.getUsers();
+  }
+
+  /* GET all users */
+  public getUsers(): void {
+    this.usersService.getUsers().subscribe(users => this.users = users);
+  }
+  /* Redirect to Delete Function */
+  public redirectToDelete(id: number) {
+    const deleteURL: string = `/users/delete/${id}` ;
+    this.router.navigate([deleteURL]);
+  }
+
+  /* Redirect to Update Function */
+  public redirectToUpdate(id: number) {
+    const updateURL: string = `/users/update/${id}`;
+    this.router.navigate([updateURL]);
   }
 
 }

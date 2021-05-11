@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms'
+import { ActivatedRoute, Router } from '@angular/router';
+import { AddComponent } from 'src/app/users/add/add.component';
 
 
 @Component({
@@ -10,7 +12,8 @@ import { FormControl, FormGroup, Validators } from '@angular/forms'
 export class FormComponent implements OnInit {
   signinForm: FormGroup;
 
-  constructor() {
+  constructor(private activatedRoute: ActivatedRoute,
+    private router: Router) {
     this.signinForm = new FormGroup({
       name: new FormControl('', [Validators.required, Validators.minLength(3)]),
       surname: new FormControl('', [Validators.required, Validators.minLength(3)]),
@@ -31,9 +34,16 @@ export class FormComponent implements OnInit {
     return this.signinForm.hasError('required') ? 'Enter a value' : '';
   }
   onSubmit() {
-    console.log(this.signinForm.controls["surname"].value);
-  }
+    console.log(this.signinForm.value);
+
+  } 
   ngOnInit(): void {
   }
 
+  /* Redirect to Add */
+  // public redirectToAdd() {
+  //   this.addComp.addUser(this.signinForm.value);
+  //   //const updateURL: string = `/users/post`;
+  //   //this.router.navigate([updateURL]);
+  // }
 }

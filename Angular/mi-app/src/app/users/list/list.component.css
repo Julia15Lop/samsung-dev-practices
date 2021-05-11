@@ -93,6 +93,16 @@
 button {
     margin-right: 10px;
 }
+
+.button-row {
+  margin-top: 20px;
+  float: right;
+}
+
+.add-button {
+  background-color: #1976d2;
+  color: white;
+}
 table {
     width: 100%;
 }

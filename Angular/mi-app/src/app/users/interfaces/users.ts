@@ -1,10 +1,10 @@
 export interface User {
-  _id: number;
-  _name: string;
-  _surname: string;
-  _age: number;
-  _dni: string;
-  _birth: Date;
-  _color: string;
-  _sex: string;
+  id?: number;
+  name: string;
+  surname: string;
+  age: number;
+  dni: string;
+  color: string;
+  birth: Date;
+  sex: string;
 }

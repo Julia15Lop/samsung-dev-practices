@@ -5,6 +5,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SigninRoutingModule } from './signin-routing.module';
 import { FormComponent } from './form/form.component';
 import { MaterialModule } from '../material/material.module'
+import { AddComponent } from '../users/add/add.component';
 
 
 @NgModule({

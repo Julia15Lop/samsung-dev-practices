@@ -1,9 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, throwError } from 'rxjs';
+import { Observable, of, throwError } from 'rxjs';
 import { environment } from 'src/environments/environment';
 
-import { retry, catchError } from 'rxjs/operators';
+import { catchError, map, tap } from 'rxjs/operators';
 
 import { User } from '../interfaces/users'
 
@@ -13,16 +13,17 @@ import { User } from '../interfaces/users'
 export class UsersService {
   
   private baseUrl: string;
-  private id: number;
 
   constructor(private http: HttpClient) {
     this.baseUrl = environment.baseUrl;
-    this.id = 1;
   }
   
   /* Get Users method */
   public getUsers(): Observable<User[]> {
-    return this.http.get<User[]>(`${this.baseUrl}/users`);
+    console.log(this.baseUrl);
+    return this.http.get<User[]>(`${this.baseUrl}/users/users`).pipe(
+      catchError(this.handleError<User[]>('getUsers', []))
+    );
   }
 
   /* GET User by Id */
@@ -31,9 +32,11 @@ export class UsersService {
   }
 
   /* POST User */
-  public addUser(postUserData: Object): Observable<User> {
-    this.id = this.id + 1;
-    return this.http.post<User>(`${this.baseUrl}/users`, postUserData);
+  public addUser(user: User): Observable<User> {
+    return this.http.post<User>(`${this.baseUrl}/users/users`, user).pipe(
+      tap((newUser: User) => console.log("User added")),
+      catchError(this.handleError<User>('addUser'))
+    );
   }
 
   /* PUT User data */
@@ -43,7 +46,23 @@ export class UsersService {
   
   /* DELETE User by ID */
   public  deleteUser(id: number): Observable<{}> {
-    return this.http.delete(`${this.baseUrl}/users/${id}`);
+    return this.http.delete(`${this.baseUrl}/users/users/${id}`).pipe(
+      tap(_ => console.log("Deleted user")),
+      catchError(this.handleError<User>('deleteHero'))
+    );
   }
 
+  private handleError<T>(operation = 'operation', result?: T) {
+    return (error: any): Observable<T> => {
+  
+      // TODO: send the error to remote logging infrastructure
+      console.error(error); // log to console instead
+  
+      // TODO: better job of transforming error for user consumption
+      //this.log(`${operation} failed: ${error.message}`);
+  
+      // Let the app keep running by returning an empty result.
+      return of(result as T);
+    };
+  }
 }

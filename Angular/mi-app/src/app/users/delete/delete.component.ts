@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { UsersService } from '../services/users.service';
 import { User } from '../interfaces/users';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-delete',
@@ -9,13 +10,32 @@ import { User } from '../interfaces/users';
   styleUrls: ['./delete.component.css']
 })
 export class DeleteComponent implements OnInit {
+  private id: number;
+  
 
-  user: User | undefined;
-
-  constructor( private userService: UsersService ) { }
+  constructor(private userService: UsersService, private router: Router,
+    private activeRoute: ActivatedRoute) {
+    
+    this.id = this.activeRoute.snapshot.params['id'];
+      
+  }
 
   ngOnInit(): void {
-    this.userService.deleteUser(user.id).subscribe();
+    this.deleteUser(this.id);
+  }
+
+  /* Redirect to User List */
+  public redirectToUserList = () => {
+    this.router.navigate(['/users/list']);
+  }
+  /* Delete User */
+  public deleteUser(id: number) {
+    this.userService.deleteUser(id).subscribe(
+      res => this.redirectToUserList(),
+      (error) => {
+        console.log("Error al borrar usuario");
+      }
+    );
   }
 
 }
