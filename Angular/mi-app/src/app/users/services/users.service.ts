@@ -6,6 +6,7 @@ import { environment } from 'src/environments/environment';
 import { catchError, map, tap } from 'rxjs/operators';
 
 import { User } from '../interfaces/users'
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -14,7 +15,8 @@ export class UsersService {
   
   private baseUrl: string;
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient,
+              private router: Router) {
     this.baseUrl = environment.baseUrl;
   }
   
@@ -28,7 +30,7 @@ export class UsersService {
 
   /* GET User by Id */
   public getUserById(id: number): Observable<User> {
-    return this.http.get<User>(`${this.baseUrl}/users/${id}`).pipe(
+    return this.http.get<User>(`${this.baseUrl}/users/users/${id}`).pipe(
       tap(u => console.log(`Fetched User id=${id}`)),
       catchError(this.handleError<User>('searchUser'))
     );
@@ -44,7 +46,7 @@ export class UsersService {
 
   /* PUT User data */
   public putUser(updateUserData: Object, id: number): Observable<User> {
-    return this.http.put<User>(`${this.baseUrl}/users/${id}`, updateUserData);
+    return this.http.put<User>(`${this.baseUrl}/users/users/${id}`, updateUserData);
   }
   
   /* DELETE User by ID */
@@ -55,16 +57,19 @@ export class UsersService {
     );
   }
 
+  /* Handle error */
   private handleError<T>(operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
   
       // TODO: send the error to remote logging infrastructure
       console.error(error); // log to console instead
-  
-      // TODO: better job of transforming error for user consumption
-      //this.log(`${operation} failed: ${error.message}`);
-  
+
       return of(result as T);
     };
+  }
+
+  /* Redirect to Users List */
+  public redirectToUserList = () => {
+    this.router.navigate(['/users/list']);
   }
 }

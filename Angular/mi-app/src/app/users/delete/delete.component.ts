@@ -23,16 +23,11 @@ export class DeleteComponent implements OnInit {
   ngOnInit(): void {
     this.deleteUser(this.id);
   }
-
-  /* Redirect to User List */
-  public redirectToUserList = () => {
-    this.router.navigate(['/users/list']);
-  }
   
   /* Delete User */
   public deleteUser(id: number) {
     this.userService.deleteUser(id).subscribe(
-      res => this.redirectToUserList(),
+      res => this.userService.redirectToUserList(),
       (error) => {
         console.log("Error al borrar usuario");
       }

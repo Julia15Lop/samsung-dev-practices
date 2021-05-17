@@ -22,7 +22,7 @@ export class AddComponent implements OnInit {
   user: User | undefined;
 
   constructor(private usersService: UsersService,
-    private activatedRoute: ActivatedRoute, private router: Router,
+    private activatedRoute: ActivatedRoute,
     private dataService: InMemoryDataService) {
     this.id = dataService.genId(this.users);
 
@@ -47,12 +47,6 @@ export class AddComponent implements OnInit {
     this.usersService.addUser(this.addForm.value)
       .subscribe(user => { this.users.push(user)
       });
-    this.redirectToList();
-  }
-
-  /* Redirect to List Component */
-  public redirectToList() {
-    const listURL: string = `/users/list`;
-    this.router.navigate([listURL]);
+    this.usersService.redirectToUserList();
   }
 }

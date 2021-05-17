@@ -19,11 +19,11 @@ export class UpdateComponent implements OnInit {
   user: User | undefined;
 
 
-  constructor(private userService: UsersService,
-    private activeRoute: ActivatedRoute, private router: Router) {
+  constructor(private usersService: UsersService,
+    private activeRoute: ActivatedRoute) {
     
     this.id = this.activeRoute.snapshot.params['id'];
-    
+      
     this.updateForm = new FormGroup({
       id: new FormControl(),
       name: new FormControl('', [Validators.required, Validators.minLength(3)]),
@@ -37,16 +37,32 @@ export class UpdateComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.showUserInfo();
   }
 
   /* Show fields */
   public showUserInfo() {
-    
+    this.getUserById(this.id);
   }
   
+  /* GET User by ID */
+  public getUserById(id: number) {
+    this.usersService.getUserById(id).subscribe(
+      user => {
+        this.updateForm.patchValue(user);
+        this.user = user;
+        return user;
+      },
+      (error) => {
+        console.log("Error al borrar usuario");
+      }
+    )
+  }
+
   /* Update register */
   public saveChanges() {
     console.log(this.updateForm.value)
+    this.usersService.putUser(this.updateForm.value, this.id)
+    .subscribe(() => this.usersService.redirectToUserList());
   }
-
 }

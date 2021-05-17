@@ -8,8 +8,8 @@ import { User } from '../users/interfaces/users';
 export class InMemoryDataService implements InMemoryDbService {
   createDb() {
     const users = [
-      { id: 1, name: "Julia", surname: "Lopez", age: 23, color: "red", sex: "woman", dni: "030042034C", birth: new Date() },
-      { id: 2, name: "Natalia", surname: "Lopez Sánchez", age: 23, color: "red", sex: "woman", dni: "030042034C", birth: new Date()}
+      { id: 1, name: "Julia", surname: "Lopez", age: 23, color: "red", sex: "woman", dni: "03042034C", birth: new Date() },
+      { id: 2, name: "Natalia", surname: "Lopez Sánchez", age: 23, color: "red", sex: "woman", dni: "03 042034C", birth: new Date()}
     ];
     return {users};
   }

@@ -12,8 +12,8 @@ import { UsersService } from '../services/users.service';
 })
 export class FindComponent implements OnInit {
   id: number;
-  users: User[] = USERS;
-  user: User | undefined;
+  //  users: User[] = USERS;
+  user!: User;
 
   constructor(private usersService: UsersService,
     private router: Router, private activatedRoute: ActivatedRoute) {
@@ -22,14 +22,19 @@ export class FindComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.getUserById(this.id);
   }
 
   /* GET User by ID */
   public getUserById(id: number) {
+    console.log(this.user);
     this.usersService.getUserById(id).subscribe(
-      user => this.user = user
+      user => this.user = user,
+      (error) => {
+        console.log("Error al borrar usuario");
+      }
     )
+    console.log(this.user);
+    return this.user
   }
 
 }
