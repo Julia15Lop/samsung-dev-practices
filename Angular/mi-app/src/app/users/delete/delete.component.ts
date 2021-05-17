@@ -28,6 +28,7 @@ export class DeleteComponent implements OnInit {
   public redirectToUserList = () => {
     this.router.navigate(['/users/list']);
   }
+  
   /* Delete User */
   public deleteUser(id: number) {
     this.userService.deleteUser(id).subscribe(

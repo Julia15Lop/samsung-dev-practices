@@ -27,7 +27,7 @@ export class AddComponent implements OnInit {
     this.id = dataService.genId(this.users);
 
     this.addForm = new FormGroup({
-      id: new FormControl(),
+      id: new FormControl(this.id),
       name: new FormControl('', [Validators.required, Validators.minLength(3)]),
       surname: new FormControl('', [Validators.required, Validators.minLength(3)]),
       age: new FormControl('', [Validators.required, Validators.min(0), Validators.max(125)]),
@@ -42,25 +42,17 @@ export class AddComponent implements OnInit {
   }
 
   /* Add user function */
-  public addUser() {
-    
-    console.log(this.addForm.value);
-  
-    this.usersService.addUser(this.addForm.value).subscribe(
-      data => { console.log("Añadido") },
-      error => { console.log("Error al añadir usuario") }
-      
-    );
-    // this.usersService.addUser().subscribe(
-    //   (next) => console.log('User Added'),
-    //   (error) => this.route.navigate(['/form']);
-    // );
-  }
-
   public add(): void {
+    console.log(this.addForm.value);
     this.usersService.addUser(this.addForm.value)
       .subscribe(user => { this.users.push(user)
       });
+    this.redirectToList();
   }
 
+  /* Redirect to List Component */
+  public redirectToList() {
+    const listURL: string = `/users/list`;
+    this.router.navigate([listURL]);
+  }
 }

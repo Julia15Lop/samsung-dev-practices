@@ -28,7 +28,10 @@ export class UsersService {
 
   /* GET User by Id */
   public getUserById(id: number): Observable<User> {
-    return this.http.get<User>(`${this.baseUrl}/users/${id}`);
+    return this.http.get<User>(`${this.baseUrl}/users/${id}`).pipe(
+      tap(u => console.log(`Fetched User id=${id}`)),
+      catchError(this.handleError<User>('searchUser'))
+    );
   }
 
   /* POST User */
@@ -47,7 +50,7 @@ export class UsersService {
   /* DELETE User by ID */
   public  deleteUser(id: number): Observable<{}> {
     return this.http.delete(`${this.baseUrl}/users/users/${id}`).pipe(
-      tap(_ => console.log("Deleted user")),
+      tap(_ => console.log("Deleted user" + id)),
       catchError(this.handleError<User>('deleteHero'))
     );
   }
@@ -61,7 +64,6 @@ export class UsersService {
       // TODO: better job of transforming error for user consumption
       //this.log(`${operation} failed: ${error.message}`);
   
-      // Let the app keep running by returning an empty result.
       return of(result as T);
     };
   }
