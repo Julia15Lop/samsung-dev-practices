@@ -84,7 +84,9 @@
     width: auto;
     display: flex;
 }
-
+table {
+  width: 100%;
+}
 .mat-sort-header-container {
     display:flex;
     justify-content:center;
