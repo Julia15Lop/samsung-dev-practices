@@ -27,9 +27,13 @@ export class DeleteComponent implements OnInit {
   /* Delete User */
   public deleteUser(id: number) {
     this.userService.deleteUser(id).subscribe(
-      res => this.userService.redirectToUserList(),
+      res => {
+        this.userService.redirectToUserList();
+        alert("Usuario eliminado");
+      },
       (error) => {
-        console.log("Error al borrar usuario");
+        console.log("[ERROR] No se pudo borrar usuario");
+        alert("No se ha borrado el usuario")
       }
     );
   }

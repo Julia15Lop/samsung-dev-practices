@@ -26,7 +26,14 @@ export class ListComponent implements OnInit {
 
   /* GET all users */
   public getUsers(): void {
-    this.usersService.getUsers().subscribe(users => this.users = users);
+    this.usersService.getUsers().subscribe(
+      users => this.users = users,
+      (error) => {
+        console.log("[ERROR] Usuarios no encontrados");
+        alert("[ERROR] Usuarios no encontrados");
+      }
+    
+    );
   }
   /* Redirect to Delete Function */
   public redirectToDelete(id: number) {

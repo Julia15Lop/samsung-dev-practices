@@ -54,7 +54,7 @@ export class UpdateComponent implements OnInit {
         return user;
       },
       (error) => {
-        console.log("[ERROR] No se borró el usuario");
+        console.log("[ERROR] No se encontró al usuario");
       }
     )
   }

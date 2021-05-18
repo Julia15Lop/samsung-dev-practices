@@ -108,3 +108,8 @@ td {
 .button-row .mat-button-base {
   margin: 8px 8px 8px 0;
 }
+
+.update-button {
+  background-color: #1976d2;
+  color: white;
+}

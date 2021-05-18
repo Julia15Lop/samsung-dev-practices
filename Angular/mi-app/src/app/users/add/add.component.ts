@@ -45,11 +45,13 @@ export class AddComponent implements OnInit {
   public add(): void {
     console.log(this.addForm.value);
     this.usersService.addUser(this.addForm.value).subscribe(
-        user => {
-          this.users.push(user)
+      user => {
+        this.users.push(user);
+        alert("Usuario añadido");
         },
       (error) => {
-        console.log("[ERROR] No se pudo añadir al usuario")
+        console.log("[ERROR] No se pudo añadir al usuario");
+        alert("[ERROR] Usuario no añadido");
       }
       
     );
