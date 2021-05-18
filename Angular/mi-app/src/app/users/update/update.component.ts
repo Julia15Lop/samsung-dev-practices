@@ -54,15 +54,23 @@ export class UpdateComponent implements OnInit {
         return user;
       },
       (error) => {
-        console.log("Error al borrar usuario");
+        console.log("[ERROR] No se borró el usuario");
       }
     )
   }
 
   /* Update register */
   public saveChanges() {
-    console.log(this.updateForm.value)
-    this.usersService.putUser(this.updateForm.value, this.id)
-    .subscribe(() => this.usersService.redirectToUserList());
+    this.usersService.putUser(this.updateForm.value, this.id).subscribe(
+      () => {
+        this.usersService.redirectToUserList()
+        alert("Usuario Actualizado");
+      },
+      (error) => {
+        console.log("[ERROR] No se pudieron guardar los cambios");
+        alert("No se pudieron guardar los cambios");
+      }
+    
+    );
   }
 }
