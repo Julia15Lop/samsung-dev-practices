@@ -24,7 +24,11 @@
           <td><mat-form-field class="register-full-width">
             <mat-label>Nombre</mat-label>
             <input matInput formControlName="name" minlength="3" placeholder="Nombre" required>
-          </mat-form-field></td>
+            <small class="text-danger" *ngIf="addForm.controls['name'].errors">
+              This field is required.
+            </small>
+          </mat-form-field>
+        </td>
           
           <!-- Surname -->
           <td><mat-form-field class="register-full-width">
@@ -47,14 +51,18 @@
             <input matInput #dni formControlName="dni" required maxlength="9" placeholder="Ex. 03978393C">
             <mat-hint align="end">{{dni.value.length}} / 9</mat-hint>
           </mat-form-field></td>
-
+        
+        </tr></table>
+        
+        <table class="register-full-width" cellspacing="0"><tr>
+          
           <!-- Color -->
           <td><mat-form-field class="register-full-width">
             <mat-label>Color Favorito</mat-label>
             <input matInput formControlName="color" required minlength="3" placeholder="color">
           </mat-form-field></td>
         </tr></table>
-        
+
         <br>
         
         <table class="register-full-width" cellspacing="0"><tr>
@@ -84,5 +92,6 @@
             <button mat-raised-button routerLink="/home" routerLinkActive="active" >Atrás</button>
             <button mat-raised-button [disabled]="addForm.invalid" (click)="add()" >Registrar</button>
         </div>
+
     </form>      
 </div>

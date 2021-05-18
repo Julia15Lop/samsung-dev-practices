@@ -44,9 +44,15 @@ export class AddComponent implements OnInit {
   /* Add user function */
   public add(): void {
     console.log(this.addForm.value);
-    this.usersService.addUser(this.addForm.value)
-      .subscribe(user => { this.users.push(user)
-      });
+    this.usersService.addUser(this.addForm.value).subscribe(
+        user => {
+          this.users.push(user)
+        },
+      (error) => {
+        console.log("[ERROR] No se pudo añadir al usuario")
+      }
+      
+    );
     this.usersService.redirectToUserList();
   }
 }
