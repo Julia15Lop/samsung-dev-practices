@@ -59,7 +59,7 @@
         <!-- Birth Column -->
         <ng-container matColumnDef="birth">
             <th mat-header-cell *matHeaderCellDef> Fecha nacimiento </th>
-            <td mat-cell *matCellDef="let user"> {{user.birth}} </td>
+            <td mat-cell *matCellDef="let user"> {{user.birth | date: 'dd/MM/yyyy' }} </td>
         </ng-container>
 
         <!-- Sex Column -->
