@@ -11,7 +11,7 @@ module.exports.connect = function (url, callback) {
         return callback();
     }
     
-    const client = new MongoClient(url, { useNewUrlParser: true });
+    const client = new MongoClient(url, { useNewUrlParser: true, useUnifiedTopology: true});
     
     client.connect(function (err, result) {
         if (err) {
