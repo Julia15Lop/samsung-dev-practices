@@ -6,3 +6,10 @@ Create a JSON file which includes supermarket products per section and with it o
 
 ## NodeJS Module 6
 Create a nodeJS Server which serves all http request and connect to MongoDB collection in order to insert new users with two parameters: name and phone
+
+## Angular Module 7
+Create
+
+## API REST with Express Module 8
+
+## Final Exercise
