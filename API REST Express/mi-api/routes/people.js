@@ -35,9 +35,9 @@ router.get('/', people_controller.people_list);
 router.post('/', valid_person, people_controller.people_create);
 
 /* PUT create user. */
-router.put('/:id', people_controller.people_updates);
+router.put('/:id', valid_person, people_controller.people_updates);
 
 /* DELETE create user. */
-router.delete('/:id', valid_person, people_controller.people_delete);
+router.delete('/:id', people_controller.people_delete);
 
 module.exports = router;

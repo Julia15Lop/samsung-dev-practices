@@ -16,7 +16,7 @@ module.exports.people_list = function(req, res) {
         next(new Error('[ERROR] La conexión no está establecida'));
         return;
     }
-    db.get().db('apidb').collection('users').find().toArray(function(err, result) {
+    db.get().db('mydb').collection('people').find().toArray(function(err, result) {
         if (err) {
             next ( new Error('[ERROR] Fallo en la conexión con la BD') );
             return;
@@ -72,7 +72,10 @@ module.exports.people_updates = function(req, res) {
         return;
     }
 
-    const filter = {id: req.body.id};
+    var ObjectID = require('mongodb').ObjectID;
+    const _id = new ObjectID(req.params.id);
+    const filter = {_id: _id};
+    
     const update = {
         $set: {
         name: req.body.name, 
@@ -84,6 +87,7 @@ module.exports.people_updates = function(req, res) {
         sex: req.body.sex
     }};
 
+    console.log(req.body.age)
     db.get().db('mydb').collection('people').updateOne(filter, update,
         function (err, result) {    
             if (err) {
@@ -96,16 +100,18 @@ module.exports.people_updates = function(req, res) {
 };
 
 /* Delete People */
-module.exports.people_delete = function(req, res) {
+module.exports.people_delete = function(req, res, next) {
     if (db.get() === null) {
         next(new Error('[ERROR] La conexión no está establecida'));
         return;
     }
+    
+    var ObjectID = require('mongodb').ObjectID;
+    const _id = new ObjectID(req.params.id);
+    const filter = {_id: _id};
 
-    const filter = {id: req.body.id};
-
-    db.get().db('mydb').collection('people').deleteOne(filter, 
-        function(err, result) {
+    console.log(filter);
+    db.get().db('mydb').collection('people').deleteOne(filter, function(err, result) {
             if (err) {
                 next ( new Error('[ERROR] Fallo en la conexión con la BD') );
                 return;
