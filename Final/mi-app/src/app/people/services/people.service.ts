@@ -23,7 +23,7 @@ export class PeopleService {
   /* Get People method */
   public getPeople(): Observable<Person[]> {
     console.log(this.baseUrl);
-    return this.http.get<Person[]>(`${this.baseUrl}/people/people`).pipe(
+    return this.http.get<Person[]>(`${this.baseUrl}/people`).pipe(
       catchError(this.handleError<Person[]>('getPeople', []))
     );
   }

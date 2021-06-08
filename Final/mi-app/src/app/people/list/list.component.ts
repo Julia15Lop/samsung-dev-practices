@@ -3,7 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 
 import { Person } from '../interfaces/people'
 import { PeopleService } from '../services/people.service';
-import { PEOPLE } from 'src/app/helpers/mock-people';
+//import { PEOPLE } from 'src/app/helpers/mock-people';
 
 @Component({
   selector: 'app-list',
@@ -12,7 +12,7 @@ import { PEOPLE } from 'src/app/helpers/mock-people';
 })
 export class ListComponent implements OnInit {
 
-  people: Person[] = PEOPLE;
+  people: Person[] = [];
 
 
   displayedColumns: string[] = ['id', 'name', 'surname', 'age', 'dni', 'color', 'birth', 'sex', 'actions']

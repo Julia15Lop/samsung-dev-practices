@@ -13,7 +13,7 @@ const routes: Routes = [
     path: '',
     children: [
       {
-        path: 'list',
+        path: '',
         component: ListComponent
       },
       {
