@@ -15,19 +15,19 @@ import { InMemoryDataService } from 'src/app/helpers/in-memory-data.service';
 })
 export class AddComponent implements OnInit {
   addForm: FormGroup;
-  private id: number;
+  //private id: number;
 
-  people: Person[] = PEOPLE;
+  people: Person[] = [];
 
   person: Person | undefined;
 
   constructor(private peopleService: PeopleService,
     private activatedRoute: ActivatedRoute,
     private dataService: InMemoryDataService) {
-    this.id = dataService.genId(this.people);
+    //this.id = dataService.genId(this.people);
 
     this.addForm = new FormGroup({
-      id: new FormControl(this.id),
+      
       name: new FormControl('', [Validators.required, Validators.minLength(3)]),
       surname: new FormControl('', [Validators.required, Validators.minLength(3)]),
       age: new FormControl('', [Validators.required, Validators.min(0), Validators.max(125)]),

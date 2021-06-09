@@ -30,7 +30,7 @@ export class PeopleService {
 
   /* GET Person by Id */
   public getPersonById(id: number): Observable<Person> {
-    return this.http.get<Person>(`${this.baseUrl}/people/people/${id}`).pipe(
+    return this.http.get<Person>(`${this.baseUrl}/people/${id}`).pipe(
       tap(u => console.log(`Fetched Person id=${id}`)),
       catchError(this.handleError<Person>('searchPerson'))
     );
@@ -38,7 +38,7 @@ export class PeopleService {
 
   /* POST Person */
   public addPerson(person: Person): Observable<Person> {
-    return this.http.post<Person>(`${this.baseUrl}/people/people`, person).pipe(
+    return this.http.post<Person>(`${this.baseUrl}/people`, person).pipe(
       tap((newPerson: Person) => console.log("Person added")),
       catchError(this.handleError<Person>('addPerson'))
     );
@@ -46,12 +46,12 @@ export class PeopleService {
 
   /* PUT Person data */
   public putPerson(updatePersonData: Object, id: number): Observable<Person> {
-    return this.http.put<Person>(`${this.baseUrl}/people/people/${id}`, updatePersonData);
+    return this.http.put<Person>(`${this.baseUrl}/people/${id}`, updatePersonData);
   }
   
   /* DELETE Person by ID */
   public  deletePerson(id: number): Observable<{}> {
-    return this.http.delete(`${this.baseUrl}/people/people/${id}`).pipe(
+    return this.http.delete(`${this.baseUrl}/people/${id}`).pipe(
       tap(_ => console.log("Deleted person" + id)),
       catchError(this.handleError<Person>('deleteHero'))
     );

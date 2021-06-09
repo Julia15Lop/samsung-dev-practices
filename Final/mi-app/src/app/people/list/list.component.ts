@@ -15,7 +15,7 @@ export class ListComponent implements OnInit {
   people: Person[] = [];
 
 
-  displayedColumns: string[] = ['id', 'name', 'surname', 'age', 'dni', 'color', 'birth', 'sex', 'actions']
+  displayedColumns: string[] = ['_id', 'name', 'surname', 'age', 'dni', 'color', 'birth', 'sex', 'actions']
   
   constructor(private peopleService: PeopleService, private activatedRoute: ActivatedRoute,
               private router: Router) { }

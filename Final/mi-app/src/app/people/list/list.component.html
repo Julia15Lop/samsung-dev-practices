@@ -21,9 +21,9 @@
     <table mat-table [dataSource]="people" class="mat-elevation-z8">
 
         <!-- ID Column -->
-        <ng-container matColumnDef="id">
+        <ng-container matColumnDef="_id">
             <th mat-header-cell *matHeaderCellDef> No. </th>
-            <td mat-cell *matCellDef="let person"> {{person.id}} </td>
+            <td mat-cell *matCellDef="let person"> {{person._id}} </td>
         </ng-container>
         
         <!-- Name Column -->
@@ -71,12 +71,12 @@
         <ng-container matColumnDef="actions">
             <th mat-header-cell *matHeaderCellDef> Actions </th>
             <td mat-cell *matCellDef="let person" >
-                <button mat-mini-fab color="basic" aria-label="edit-button" (click)="redirectToUpdate(person.id)">
+                <button mat-mini-fab color="basic" aria-label="edit-button" (click)="redirectToUpdate(person._id)">
                     <mat-icon>edit</mat-icon>
                     
                 </button>
                     
-                <button mat-mini-fab color="warn" aria-label="delete-button" (click)="redirectToDelete(person.id)" > 
+                <button mat-mini-fab color="warn" aria-label="delete-button" (click)="redirectToDelete(person._id)" > 
                     <mat-icon>delete</mat-icon>
                 </button>
             </td>
