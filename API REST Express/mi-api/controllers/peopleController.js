@@ -26,7 +26,28 @@ module.exports.people_list = function(req, res) {
     });
 };
 
-// Create person
+/* Display some person */
+module.exports.people_by_id = function(req, res, next) {
+    if (db.get() === null) {
+        next(new Error('[ERROR] La conexión no está establecida'));
+        return;
+    }
+
+    var ObjectID = require('mongodb').ObjectID;
+    const _id = new ObjectID(req.params.id);
+
+    db.get().db('mydb').collection('people').find(_id).toArray(function(err, result) {
+        if (err) {
+            next ( new Error('[ERROR] Fallo en la conexión con la BD') );
+            return;
+        } else {
+            res.send(result);
+        }
+    });
+};
+
+
+/* Create Person */
 module.exports.people_create = function(req, res, next) {
     const errors = validationResult(req);
 
