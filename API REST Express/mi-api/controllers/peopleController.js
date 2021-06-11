@@ -35,13 +35,17 @@ module.exports.people_by_id = function(req, res, next) {
 
     var ObjectID = require('mongodb').ObjectID;
     const _id = new ObjectID(req.params.id);
+    
 
-    db.get().db('mydb').collection('people').find(_id).toArray(function(err, result) {
-        if (err) {
+    db.get().db('mydb').collection('people').findOne(_id).then(
+        result => { 
+        if(result) {
+            console.log(`Successfully found document: ${result}.`);
+            res.send(result);
+        } else {
+            console.log("No document matches the provided query.");
             next ( new Error('[ERROR] Fallo en la conexión con la BD') );
             return;
-        } else {
-            res.send(result);
         }
     });
 };
