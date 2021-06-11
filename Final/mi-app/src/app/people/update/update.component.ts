@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { PEOPLE } from 'src/app/helpers/mock-people';
 import { Person } from '../interfaces/people';
 import { PeopleService } from '../services/people.service';
 
@@ -15,7 +14,7 @@ export class UpdateComponent implements OnInit {
   updateForm: FormGroup;
   private id: number;
 
-  people: Person[] = PEOPLE;
+  
   person: Person | undefined;
 
 
@@ -25,7 +24,7 @@ export class UpdateComponent implements OnInit {
     this.id = this.activeRoute.snapshot.params['id'];
       
     this.updateForm = new FormGroup({
-      id: new FormControl(),
+      
       name: new FormControl('', [Validators.required, Validators.minLength(3)]),
       surname: new FormControl('', [Validators.required, Validators.minLength(3)]),
       age: new FormControl('', [Validators.required, Validators.min(0), Validators.max(125)]),
@@ -49,8 +48,10 @@ export class UpdateComponent implements OnInit {
   public getPersonById(id: number) {
     this.peopleService.getPersonById(id).subscribe(
       person => {
-        this.updateForm.patchValue(person);
         this.person = person;
+        this.updateForm.patchValue(person);
+        console.log(person);
+        console.log(this.updateForm);
         return person;
       },
       (error) => {
