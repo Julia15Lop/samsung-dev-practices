@@ -22,7 +22,7 @@ const valid_person = [
         .isLength({ min: 3 })
         .isAlpha(locale = 'es-ES', {ignore: '- /'}),
     check('sex', 'Sexo, puede ser Hombre, Mujer, Otro, No especificado')
-        .isIn(['Hombre', 'Mujer', 'Otro', 'No especificado'])
+        .isIn(['Hombre', 'Mujer', 'Otro', 'No Especificado'])
 ];
 
 /* Controller */

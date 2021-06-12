@@ -70,6 +70,6 @@ export class PeopleService {
 
   /* Redirect to People List */
   public redirectToPersonList = () => {
-    this.router.navigate(['/people/list']);
+    this.router.navigate(['/people']);
   }
 }

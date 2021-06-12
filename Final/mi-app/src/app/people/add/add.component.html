@@ -24,8 +24,8 @@
           <td><mat-form-field class="register-full-width">
             <mat-label>Nombre</mat-label>
             <input matInput formControlName="name" minlength="3" placeholder="Nombre" required>
-            <small class="text-danger" *ngIf="addForm.controls['name'].errors">
-              This field is required.
+            <small class="text-danger" *ngIf="addForm.controls['name'].errors?.minlength">
+              Formato incorrecto
             </small>
           </mat-form-field>
         </td>
@@ -34,6 +34,9 @@
           <td><mat-form-field class="register-full-width">
             <mat-label>Apellidos</mat-label>
             <input matInput formControlName="surname" required minlength="3">
+            <small class="text-danger" *ngIf="addForm.controls['surname'].errors?.minlength">
+              This field contains errors.
+            </small>
           </mat-form-field></td>
 
         </tr></table>
@@ -43,6 +46,9 @@
           <td><mat-form-field class="register-full-width">
             <mat-label>Edad</mat-label>
             <input matInput formControlName="age" required min="0" max="125">
+            <small class="text-danger" *ngIf="addForm.controls['age'].errors?.minlength">
+              Formato incorrecto
+            </small>
           </mat-form-field></td>
 
           <!-- DNI -->
@@ -50,6 +56,9 @@
             <mat-label>DNI</mat-label>
             <input matInput #dni formControlName="dni" required maxlength="9" placeholder="Ex. 03978393C">
             <mat-hint align="end">{{dni.value.length}} / 9</mat-hint>
+            <small class="text-danger" *ngIf="addForm.controls['dni'].errors?.minlength">
+              Formato incorrecto
+            </small>
           </mat-form-field></td>
         
         </tr></table>
@@ -60,6 +69,12 @@
           <td><mat-form-field class="register-full-width">
             <mat-label>Color Favorito</mat-label>
             <input matInput formControlName="color" required minlength="3" placeholder="color">
+            <small class="text-danger" *ngIf="addForm.controls['color'].errors?.minlength">
+              Formato incorrecto
+            </small>
+            <small class="text-danger" *ngIf="addForm.controls['color'].errors?.required">
+              Introduce color
+            </small>
           </mat-form-field></td>
         </tr></table>
 

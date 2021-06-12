@@ -8,9 +8,6 @@ import { AppComponent } from './app.component';
 
 import { ErrorPageComponent } from './error-page/error-page.component';
 
-//import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
-//import { InMemoryDataService } from './helpers/in-memory-data.service';
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,9 +18,6 @@ import { ErrorPageComponent } from './error-page/error-page.component';
     HttpClientModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    // HttpClientInMemoryWebApiModule.forRoot(
-    //   InMemoryDataService, { dataEncapsulation: false }
-    // )
   ],
   providers: [
     

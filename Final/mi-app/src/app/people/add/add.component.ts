@@ -5,7 +5,6 @@ import { FormControl, FormGroup, Validators } from '@angular/forms'
 import { PeopleService } from '../services/people.service';
 import { Person } from '../interfaces/people';
 import { ActivatedRoute, Router } from '@angular/router';
-import { PEOPLE } from 'src/app/helpers/mock-people';
 import { InMemoryDataService } from 'src/app/helpers/in-memory-data.service';
 
 @Component({
@@ -33,7 +32,7 @@ export class AddComponent implements OnInit {
       age: new FormControl('', [Validators.required, Validators.min(0), Validators.max(125)]),
       dni: new FormControl('', [Validators.required, Validators.pattern('^[0-9]{8}[A-Z]')]),
       color: new FormControl('', [Validators.required, Validators.minLength(3)]),
-      birth: new FormControl('', Validators.required),
+      birth: new FormControl('', [Validators.required]),
       sex: new FormControl('', Validators.required)
     });
   }
@@ -43,6 +42,8 @@ export class AddComponent implements OnInit {
 
   /* Add person function */
   public add(): void {
+    const dateISO = this.addForm.controls['birth'].value.toISOString();
+    this.addForm.patchValue({ birth: dateISO });
     console.log(this.addForm.value);
     this.peopleService.addPerson(this.addForm.value).subscribe(
       person => {
