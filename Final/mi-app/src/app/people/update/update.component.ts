@@ -50,12 +50,12 @@ export class UpdateComponent implements OnInit {
       person => {
         this.person = person;
         this.updateForm.patchValue(person);
-        console.log(person);
-        console.log(this.updateForm);
-        return person;
+        
+        //return person;
       },
       (error) => {
         console.log("[ERROR] No se encontró a la person");
+        alert("No se encontrar a la persona");
       }
     )
   }
